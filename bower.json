@@ -1,0 +1,23 @@
+{
+  "name": "angular-find-text",
+  "main": "src/angular-find-text.js",
+  "homepage": "https://github.com/gpincheiraa/angular-find-text",
+  "authors": [
+    "Gonzalo Pincheira A. <g.pincheira.a@gmail.com>"
+  ],
+  "description": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.2",
+    "angular-mocks": "~1.5.5",
+    "angular-scroll": "~1.0.0"
+  }
+}
