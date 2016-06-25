@@ -29,6 +29,9 @@ module.exports = function(config) {
         // bower:js
         'bower_components/angular/angular.js',
         'bower_components/angular-mocks/angular-mocks.js',
+        'bower_components/angular-scroll/angular-scroll.js',
+        'bower_components/jquery/dist/jquery.js',
+        'bower_components/bootstrap/dist/js/bootstrap.js',
         // endbower
         'src/**/*.js',
         'test/unit/**/*.js',
@@ -50,7 +53,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec','coverage','coveralls'],
+    reporters: ['spec','coverage'],//,'coveralls'],
     //reporters: ['spec'],
 
     coverageReporter: {
@@ -64,7 +67,7 @@ module.exports = function(config) {
       reporters: [
         
         { 
-            type: 'lcov', 
+            type: 'lcov',
             subdir: 'report-lcov'
         },
 

@@ -1,7 +1,14 @@
+var fs = require('fs');
+
 module.exports = function(grunt) {
 
   //Variables que representan aspectos de la estructura de la aplicación
-  var WIREDEP_TEST_DEST    = 'karma.conf.js',
+  var ANGULAR_MAIN_MODULE  = 'gp.findText',
+      
+      ANGULAR_TEMPLATES    = ['assets/views/**/*.html'],
+      TEMPLATE_CACHE_DEST  = 'src/templates.js',
+      
+      WIREDEP_TEST_DEST    = 'karma.conf.js',
 
       JAVASCRIPT_ARRAY_SRC = ['src/**/*.js'],
 
@@ -19,7 +26,10 @@ module.exports = function(grunt) {
                                 },
      
       // Tasks
-      DEFAULT_TASKS        = [ 'wiredep',
+      DEFAULT_TASKS        = [ 'jade',
+                               'ngtemplates',
+                               'inject:angularTemplate',
+                               'wiredep',
                                'shell:test',
                                'watch'],
 
@@ -32,10 +42,24 @@ module.exports = function(grunt) {
   //Cargar paquetes de grunt
   require('load-grunt-tasks')(grunt);
 
+  grunt.loadNpmTasks('grunt-angular-templates');
+  grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-open');
+
+  //Generates a template for directive
+  grunt.registerTask('inject:angularTemplate', 'Generate a template in angular module', function() {
+    var srcFileContent = grunt.file.read('src/templates.js'),
+        dstFileContent = grunt.file.read('src/angular-find-text.js');
+
+    srcFileContent = '\n\t//directive:template\n\t' + srcFileContent + '\n\t\/\/endtemplate';
+    dstFileContent = dstFileContent.replace(/(([\s\t]*)\/\/\s*directive:template*(\S*))(\n|\r|.)*?(\/\/\s*endtemplate)/gm, srcFileContent);
+
+    grunt.file.write('src/angular-find-text.js', dstFileContent);
+
+  });
 
   //Tareas de grunt
   grunt.registerTask('default', DEFAULT_TASKS);
@@ -65,7 +89,41 @@ module.exports = function(grunt) {
     },
     shell: {
       test: {
-        command: 'karma start --single-run'
+        command: 'karma start'
+      }
+    },
+    jade: {
+      compile: {
+        options: {
+          pretty: true,
+        },
+        files: grunt.file.expandMapping(['**/*.jade'], 'assets/views/', {
+          cwd: 'src',
+          ext: '.html',
+          rename: function(destBase, destPath) {
+            return destBase + destPath.replace(/views\//, '');
+          }
+        })
+      }
+    },
+    ngtemplates: {
+      app: {
+        src: ANGULAR_TEMPLATES,
+        dest: TEMPLATE_CACHE_DEST,
+        options: {
+          module: ANGULAR_MAIN_MODULE,
+          quotes: 'single',
+          htmlmin: {
+            collapseBooleanAttributes:      false,
+            collapseWhitespace:             false,
+            removeAttributeQuotes:          false,
+            removeComments:                 true,
+            removeEmptyAttributes:          false,
+            removeRedundantAttributes:      false,
+            removeScriptTypeAttributes:     true,
+            removeStyleLinkTypeAttributes:  false
+          }
+        }
       }
     },
 

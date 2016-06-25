@@ -1,0 +1,15 @@
+.form29-search(ng-class="{closed: !$ctrl.open}")
+  
+  //- Barra cerrada
+  .closed-search(ng-click="$ctrl.open = !$ctrl.open")
+    i.fa.fa-search.fa-lg
+  
+  //- Barra abierta
+  form.opened-search(ng-submit="$ctrl.searchCode($ctrl.searchedValue)")
+    .form-group.col-xs-12.hide-search(ng-click="$ctrl.toggleOpen()")
+      i.fa.fa-reply
+      | Ocultar
+    .form-group.col-xs-12
+      input.form-control(placeholder="Código a buscar",ng-model="$ctrl.searchedValue", ng-change="$ctrl.checkEmpty($ctrl.searchedValue)")
+    .form-group.col-xs-12.submit-search
+      button.btn.btn-success(type='submit', ng-disabled="!$ctrl.searchedValue") Buscar Código 
