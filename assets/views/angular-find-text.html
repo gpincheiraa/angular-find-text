@@ -1,7 +1,7 @@
 
 <div ng-class="{closed: !$ctrl.open}" class="form29-search">
   <div ng-click="$ctrl.open = !$ctrl.open" class="closed-search"><i class="fa fa-search fa-lg"></i></div>
-  <form ng-submit="$ctrl.searchCode($ctrl.searchedValue)" class="opened-search">
+  <form ng-submit="$ctrl.searchText($ctrl.searchedValue)" class="opened-search">
     <div ng-click="$ctrl.toggleOpen()" class="form-group col-xs-12 hide-search"><i class="fa fa-reply"></i>Ocultar</div>
     <div class="form-group col-xs-12">
       <input placeholder="Código a buscar" ng-model="$ctrl.searchedValue" ng-change="$ctrl.checkEmpty($ctrl.searchedValue)" class="form-control"/>
