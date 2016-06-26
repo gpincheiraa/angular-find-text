@@ -14,14 +14,16 @@
 - Bootstrap
 - Font Awesome
 - Angular Scroll
+
 ### Install
 
 `bower install --save angular-find-text`
 
+live example
 http://codepen.io/gpincheiraa/pen/xOgJLw
 
 ###Collaborate for more features: 
-  
+
   - integrate a jquery for better search value traverse &#10004;
   - testing e2e y unit: unit done &#10004;   e2e &#9747;
   - coveralls y travis integration: &#10004;;
