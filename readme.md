@@ -22,10 +22,13 @@
 
 http://codepen.io/gpincheiraa/pen/xOgJLw
 
-###Collaborate: 
+###Collaborate for more features: 
   
-  - integrate a jquery for better search
+  - integrate a jquery for better search value traverse [ok]
   - testing e2e y unit: unit done [ok]   e2e [no]
   - coveralls y travis integration: [ok];
   - custom search button icon [no]
-  - custom css - use jquery .is() function if jquery if used, or jqlite has class recooursive if not OR a better way for find elements 
+  - custom css [ok]
+  - jQlite mechanism for search for removing jQuery dependency [no]
+  - search text insensitive option [no]
+  - search text multiple navigation to next [no]

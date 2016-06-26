@@ -38,8 +38,9 @@
       //search the directive in the html 
       $ctrl = angular.element(compiledEl.find('gp-find-text')).controller('gpFindText');
 
-      var elements = Array.prototype.slice.call(compiledEl.find('span'));
-      //Test 1
+
+      var elements = Array.prototype.slice.call(compiledEl.find($ctrl.selector));
+      
       $ctrl.searchedValue = _searched;
       $ctrl.searchText($ctrl.searchedValue);
 

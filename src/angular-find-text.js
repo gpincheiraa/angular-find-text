@@ -36,9 +36,9 @@
     .module('gp.findText')
     .directive('gpFindText', directive);
   
-  directive.$inject = ['$document'];
+  directive.$inject = ['$document', '$compile'];
 
-  function directive($document){
+  function directive($document, $compile){
     
     var ddo = {
       controller: function(){},
@@ -58,33 +58,20 @@
       
       if(!$ctrl.selector)
         throw 'provide a selector in this directive.';
-      $ctrl.matchedClass =  $ctrl.matchedClass || 'matched';
-
-      var matchedPattern = $ctrl.selector.match(/([a-z0-9]+)|([\#\.]\w+)/gi);
-
-      if(!matchedPattern)
-        throw 'selector aren\'t valid selector.';
-
-      //should be compare with all the tags possible in HTML5
-      var elementToMatch = (/^\W/).test(matchedPattern[0]) ? null : matchedPattern[0];
       
-      if(!elementToMatch)
-        throw 'please provide a valid element.';
-
-      var classesToMatch = matchedPattern.slice(1).filter(function(selectors){
-            return (/^\./).test(selectors);
-          }),
-          targetElements = Array.prototype.slice.call(element.parent().find(elementToMatch));
+      //jquery match to array using .find() method on the parent of the directive
+      var targetElements = Array.prototype.slice.call(element.parent().find($ctrl.selector));
+      //"jquerize" matched elements
+      targetElements = targetElements.map(jquerizeElements);
       
+      //variables
       $ctrl.open = false;
+      $ctrl.matchedClass =  $ctrl.matchedClass || 'matched';
+      
+      //functions
       $ctrl.searchText = search;
       $ctrl.toggleOpen = toggle;
       $ctrl.checkEmpty = checkEmpty;
-
-      targetElements = targetElements.map(formatElements);
-      targetElements = targetElements.filter(function(el){
-        return el.is(classesToMatch.join(''));
-      });
       
       function search(_code){
         targetElements.forEach(function($el){
@@ -112,7 +99,7 @@
         }
       }
       
-      function formatElements(el){
+      function jquerizeElements(el){
         return angular.element(el);
       }
       
