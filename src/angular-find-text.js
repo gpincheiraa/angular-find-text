@@ -57,22 +57,27 @@
     function link(scope, element, attrs, $ctrl){
       
       if(!$ctrl.selector)
-        throw 'Provide a selector in this directive.';
+        throw 'provide a selector in this directive.';
       $ctrl.matchedClass =  $ctrl.matchedClass || 'matched';
 
       var matchedPattern = $ctrl.selector.match(/([a-z0-9]+)|([\#\.]\w+)/gi);
-      
+
       if(!matchedPattern)
         throw 'selector aren\'t valid selector.';
 
-      var elementToMatch = matchedPattern[0],
-          classesToMatch = matchedPattern.slice(1).filter(function(selectors){
+      //should be compare with all the tags possible in HTML5
+      var elementToMatch = (/^\W/).test(matchedPattern[0]) ? null : matchedPattern[0];
+      
+      if(!elementToMatch)
+        throw 'please provide a valid element.';
+
+      var classesToMatch = matchedPattern.slice(1).filter(function(selectors){
             return (/^\./).test(selectors);
           }),
           targetElements = Array.prototype.slice.call(element.parent().find(elementToMatch));
       
       $ctrl.open = false;
-      $ctrl.searchCode = search;
+      $ctrl.searchText = search;
       $ctrl.toggleOpen = toggle;
       $ctrl.checkEmpty = checkEmpty;
 

@@ -51,11 +51,12 @@ module.exports = function(grunt) {
 
   //Generates a template for directive
   grunt.registerTask('inject:angularTemplate', 'Generate a template in angular module', function() {
-    var srcFileContent = grunt.file.read('src/templates.js'),
+    var replacementRegex = /(([\s\t]*)\/\/\s*directive:template*(\S*))(\n|\r|.)*?(\/\/\s*endtemplate)/gm,
+        srcFileContent = grunt.file.read('src/templates.js'),
         dstFileContent = grunt.file.read('src/angular-find-text.js');
 
     srcFileContent = '\n\t//directive:template\n\t' + srcFileContent + '\n\t\/\/endtemplate';
-    dstFileContent = dstFileContent.replace(/(([\s\t]*)\/\/\s*directive:template*(\S*))(\n|\r|.)*?(\/\/\s*endtemplate)/gm, srcFileContent);
+    dstFileContent = dstFileContent.replace(replacementRegex, srcFileContent);
 
     grunt.file.write('src/angular-find-text.js', dstFileContent);
 

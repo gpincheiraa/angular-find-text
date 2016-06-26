@@ -27,10 +27,10 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         // bower:js
+        'bower_components/jquery/dist/jquery.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-mocks/angular-mocks.js',
         'bower_components/angular-scroll/angular-scroll.js',
-        'bower_components/jquery/dist/jquery.js',
         'bower_components/bootstrap/dist/js/bootstrap.js',
         // endbower
         'src/**/*.js',
@@ -53,7 +53,7 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec','coverage'],//,'coveralls'],
+    reporters: ['spec','coverage','coveralls'],
     //reporters: ['spec'],
 
     coverageReporter: {
