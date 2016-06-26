@@ -8,6 +8,8 @@
 
 [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url]
 
+[ok]: &#10004;
+[no]: &#9747;
 
 ##Requirements
 - jQuery
@@ -18,4 +20,12 @@
 
 `bower install --save angular-find-text`
 
-Roadmap: testing e2e y unit - coveralls y travis - custom search button icon - custom css - use jquery is if jquery if used or jqlite has class recooursive if not
+http://codepen.io/gpincheiraa/pen/xOgJLw
+
+###Collaborate: 
+  
+  - integrate a jquery for better search
+  - testing e2e y unit: unit done [ok]   e2e [no]
+  - coveralls y travis integration: [ok];
+  - custom search button icon [no]
+  - custom css - use jquery .is() function if jquery if used, or jqlite has class recooursive if not OR a better way for find elements 

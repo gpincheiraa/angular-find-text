@@ -1,6 +1,9 @@
 {
   "name": "angular-find-text",
-  "main": "src/angular-find-text.js",
+  "main": [
+    "src/angular-find-text.js",
+    "assets/css/angular-find-text.css"
+  ],
   "homepage": "https://github.com/gpincheiraa/angular-find-text",
   "authors": [
     "Gonzalo Pincheira A. <g.pincheira.a@gmail.com>"
@@ -22,5 +25,27 @@
     "angular-scroll": "~1.0.0",
     "bootstrap": "~3.3.6",
     "font-awesome": "fontawesome#~4.5.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js",
+        "dist/fonts/glyphicons-halflings-regular.eot",
+        "dist/fonts/glyphicons-halflings-regular.svg",
+        "dist/fonts/glyphicons-halflings-regular.ttf",
+        "dist/fonts/glyphicons-halflings-regular.woff"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.svg"
+      ]
+    }
   }
 }

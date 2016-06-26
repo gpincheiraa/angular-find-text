@@ -3,14 +3,19 @@ var fs = require('fs');
 module.exports = function(grunt) {
 
   //Variables que representan aspectos de la estructura de la aplicación
-  var ANGULAR_MAIN_MODULE  = 'gp.findText',
+  var INDEX_URL = 'http://localhost:9000/example.html',
+
+      ANGULAR_MAIN_MODULE  = 'gp.findText',
       
       ANGULAR_TEMPLATES    = ['assets/views/**/*.html'],
       TEMPLATE_CACHE_DEST  = 'src/templates.js',
       
+      WIREDEP_APP_DEST     = 'example.html',
       WIREDEP_TEST_DEST    = 'karma.conf.js',
 
       JAVASCRIPT_ARRAY_SRC = ['src/**/*.js'],
+
+      INJECTOR_ARRAY_SRC      = ['src/**/*.js', 'assets/css/**/*.css'],
 
       COVERAGE_URL = 'http://localhost:9001',
       COVERAGE_BASE = './test/coverage/report-html',
@@ -30,7 +35,10 @@ module.exports = function(grunt) {
                                'ngtemplates',
                                'inject:angularTemplate',
                                'wiredep',
+                               'injector',
                                'shell:test',
+                               'connect:server',
+                               'open:dev',
                                'watch'],
 
       COVERAGE_TASKS = [  'wiredep',
@@ -45,6 +53,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-angular-templates');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-injector');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-open');
@@ -70,7 +79,10 @@ module.exports = function(grunt) {
   //Configuracion de tareas
   grunt.initConfig({
     wiredep: {
-
+      app: {
+        src: WIREDEP_APP_DEST ,
+        ignorePath: /^\/.*/
+      },
       test: {
         devDependencies: true,
         src: WIREDEP_TEST_DEST,
@@ -88,6 +100,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    injector: {
+      options: {
+        addRootSlash: false
+      },
+      local_dependencies: {
+        files: {
+          'example.html' : INJECTOR_ARRAY_SRC
+        }
+      },
+    },
+
     shell: {
       test: {
         command: 'karma start'
@@ -159,6 +182,12 @@ module.exports = function(grunt) {
       }
     },
     open: {
+      dev: {
+        url: INDEX_URL,
+        app: function() {
+          return process.platform === "linux"? 'Chromium' : 'Google Chrome';
+        }
+      },
       coverage: {
         options: {delay: 1000},
         url: COVERAGE_URL,

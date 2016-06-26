@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Master Tool">
+    <meta name="author" content="gpincheira@gmail.com">
+
+    <title>Angular Find Text</title>
+    
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- injector:css -->
+    <link rel="stylesheet" href="assets/css/angular-find-text.css">
+    <!-- endinjector -->
+  </head>
+
+  <body>
+    
+    <div ng-app="exampleApp">
+      <div ng-controller="ExampleController">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Developers</h3>
+                  <div class="pull-right"><span data-toggle="tooltip" title="Toggle table filter" data-container="body" class="clickable filter"><i class="glyphicon glyphicon-filter"></i></span></div>
+                </div>
+                <div class="panel-body">
+                  <input id="dev-table-filter" type="text" data-action="filter" data-filters="#dev-table" placeholder="Filter Developers" class="form-control"/>
+                </div>
+                <table id="dev-table" class="table table-hover">
+                  
+                  <!-- gp-find-text directive: supports a selector for search and class for matched value (defaults: 'matched')--> 
+                    
+                  <gp-find-text selector="td.numeric"></gp-find-text>
+                  
+
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Username</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td data-title="Country">AFGHANISTAN</td>
+                      <td data-title="Prefix">93</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ALASKA</td>
+                      <td data-title="Prefix">1907</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.24</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.24</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ALBANIA</td>
+                      <td data-title="Prefix">355</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ALGERIA</td>
+                      <td data-title="Prefix">213</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ANDORA</td>
+                      <td data-title="Prefix">376</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ANGOLA</td>
+                      <td data-title="Prefix">244</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ANGUILLA</td>
+                      <td data-title="Prefix">1264</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ANTIGUA & BARBUDA</td>
+                      <td data-title="Prefix">1268</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ARGENTINA</td>
+                      <td data-title="Prefix">54</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ARMENIA</td>
+                      <td data-title="Prefix">374</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ARUBA</td>
+                      <td data-title="Prefix">297</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ASCENSION ISLAND</td>
+                      <td data-title="Prefix">247</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">3.55</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">3.55</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">AUSTRALIA</td>
+                      <td data-title="Prefix">61</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.45</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">AUSTRIA</td>
+                      <td data-title="Prefix">43</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">AZERBAIJAN</td>
+                      <td data-title="Prefix">994</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">AZORES</td>
+                      <td data-title="Prefix">351</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BAHAMAS</td>
+                      <td data-title="Prefix">1242</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BAHRAIN</td>
+                      <td data-title="Prefix">973</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BANGLADESH</td>
+                      <td data-title="Prefix">880</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.13</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.13</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BARBADOS</td>
+                      <td data-title="Prefix">1246</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BELARUS</td>
+                      <td data-title="Prefix">375</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BELGIUM</td>
+                      <td data-title="Prefix">32</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BELIZE</td>
+                      <td data-title="Prefix">501</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BENIN</td>
+                      <td data-title="Prefix">229</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BERMUDA</td>
+                      <td data-title="Prefix">1441</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BHUTAN</td>
+                      <td data-title="Prefix">975</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BOLIVIA</td>
+                      <td data-title="Prefix">591</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BOSNIA HERZEGOVINA</td>
+                      <td data-title="Prefix">387</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BOTSWANA</td>
+                      <td data-title="Prefix">267</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.64</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.64</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BRAZIL</td>
+                      <td data-title="Prefix">55</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BRUNEI</td>
+                      <td data-title="Prefix">673</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.13</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BULGARIA</td>
+                      <td data-title="Prefix">359</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BURKINA FASO</td>
+                      <td data-title="Prefix">226</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">BURUNDI</td>
+                      <td data-title="Prefix">257</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CAMBODIA</td>
+                      <td data-title="Prefix">855</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.2</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.2</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CAMEROON</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">237</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CANADA</td>
+                      <td data-title="Prefix">1</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.1</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CANARY ISLANDS</td>
+                      <td data-title="Prefix">34822,<br/>34828,<br/>34922,<br/>34928</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.13</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CAPE VERDE</td>
+                      <td data-title="Prefix">238</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CAYMAN ISLAND</td>
+                      <td data-title="Prefix">1345</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CENTRAL AFRICA</td>
+                      <td data-title="Prefix">236</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CHAD</td>
+                      <td data-title="Prefix">235</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CHILE</td>
+                      <td data-title="Prefix">56</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CHINA</td>
+                      <td data-title="Prefix">86</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.08</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.12</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CHRISTMAS ISLAND</td>
+                      <td data-title="Prefix">6189164,<br/> 61891006,<br/> 61891007,<br/> 61891008</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">COCOS ISLAND</td>
+                      <td data-title="Prefix">61891010,<br/> 61891011,<br/> 61891012,<br/> 6189162</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">COLOMBIA</td>
+                      <td data-title="Prefix">57</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">COMOROS ISLAND</td>
+                      <td data-title="Prefix">269</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CONGO</td>
+                      <td data-title="Prefix">242</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">COOK ISLAND</td>
+                      <td data-title="Prefix">682</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">COSTA RICA</td>
+                      <td data-title="Prefix">506</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CROATIA</td>
+                      <td data-title="Prefix">385</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CUBA</td>
+                      <td data-title="Prefix">53</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CYPRUS</td>
+                      <td data-title="Prefix">357</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">CZECH REPUBLIC</td>
+                      <td data-title="Prefix">420</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">DENMARK</td>
+                      <td data-title="Prefix">45</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">DIEGO GARCIA</td>
+                      <td data-title="Prefix">246</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">DJIBOUTI</td>
+                      <td data-title="Prefix">253</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">DOMINICA</td>
+                      <td data-title="Prefix">1767</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">DOMINICAN REPUBLIC</td>
+                      <td data-title="Prefix">1809</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">EAST TIMOR</td>
+                      <td data-title="Prefix">670</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">2.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">2.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ECUADOR</td>
+                      <td data-title="Prefix">593</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">EGYPT</td>
+                      <td data-title="Prefix">20</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">EL SALVADOR</td>
+                      <td data-title="Prefix">503</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">EQUATORIAL GUINEA</td>
+                      <td data-title="Prefix">240</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ERITREA</td>
+                      <td data-title="Prefix">291</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ESTONIA</td>
+                      <td data-title="Prefix">372</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ETHIOPIA</td>
+                      <td data-title="Prefix">251</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">FAEROE ISLAND</td>
+                      <td data-title="Prefix">298</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">FALKLAND ISLAND</td>
+                      <td data-title="Prefix">500</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">FIJI</td>
+                      <td data-title="Prefix">679</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">FINLAND</td>
+                      <td data-title="Prefix">358</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.24</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">FRANCE</td>
+                      <td data-title="Prefix">33</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.52</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">FRENCH GUIANA</td>
+                      <td data-title="Prefix">594</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">FRENCH POLYNESIA</td>
+                      <td data-title="Prefix">689</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GABON</td>
+                      <td data-title="Prefix">241</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GAMBIA</td>
+                      <td data-title="Prefix">220</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GEORGIA</td>
+                      <td data-title="Prefix">995</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GERMANY</td>
+                      <td data-title="Prefix">49</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.65</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GHANA</td>
+                      <td data-title="Prefix">233</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GIBRALTAR</td>
+                      <td data-title="Prefix">350</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GREECE</td>
+                      <td data-title="Prefix">30</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GREENLAND</td>
+                      <td data-title="Prefix">299</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.69</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.69</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GRENADA</td>
+                      <td data-title="Prefix">1473</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GUADELOUPE</td>
+                      <td data-title="Prefix">590</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GUAM</td>
+                      <td data-title="Prefix">1671</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GUATEMALA</td>
+                      <td data-title="Prefix">502</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GUINEA BISSAU</td>
+                      <td data-title="Prefix">245</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GUINEA REPUBLIC</td>
+                      <td data-title="Prefix">224</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">GUYANA</td>
+                      <td data-title="Prefix">592</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">HAITI</td>
+                      <td data-title="Prefix">509</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">HAWAII</td>
+                      <td data-title="Prefix">1808</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.24</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.24</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">HONDURAS</td>
+                      <td data-title="Prefix">504</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">HONG KONG</td>
+                      <td data-title="Prefix">852</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.13</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">HUNGARY</td>
+                      <td data-title="Prefix">36</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ICELAND</td>
+                      <td data-title="Prefix">354</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.14</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">INDIA</td>
+                      <td data-title="Prefix">91</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.11</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.11</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">INDONESIA</td>
+                      <td data-title="Prefix">62</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.24</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.24</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">IRAN</td>
+                      <td data-title="Prefix">98</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.52</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.52</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">IRAQ</td>
+                      <td data-title="Prefix">964</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">IRELAND</td>
+                      <td data-title="Prefix">353</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ISRAEL</td>
+                      <td data-title="Prefix">972</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ITALY</td>
+                      <td data-title="Prefix">39</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.64</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">IVORY COAST</td>
+                      <td data-title="Prefix">225</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">JAMAICA</td>
+                      <td data-title="Prefix">1876</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">JAPAN</td>
+                      <td data-title="Prefix">81</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.65</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">JORDAN</td>
+                      <td data-title="Prefix">962</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">KAZAKHSTAN</td>
+                      <td data-title="Prefix">7</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">KENYA</td>
+                      <td data-title="Prefix">254</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">KIRIBATI</td>
+                      <td data-title="Prefix">686</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">KOREA NORTH</td>
+                      <td data-title="Prefix">850</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">KOREA SOUTH</td>
+                      <td data-title="Prefix">82</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.215</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">KUWAIT</td>
+                      <td data-title="Prefix">965</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">KYRGYZSTAN</td>
+                      <td data-title="Prefix">996</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LAOS</td>
+                      <td data-title="Prefix">856</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LATVIA</td>
+                      <td data-title="Prefix">371</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LEBANON</td>
+                      <td data-title="Prefix">961</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LESOTHO</td>
+                      <td data-title="Prefix">266</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LIBERIA</td>
+                      <td data-title="Prefix">231</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LIBYA</td>
+                      <td data-title="Prefix">218</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LIECHTENSTEIN</td>
+                      <td data-title="Prefix">423</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LITHUANIA</td>
+                      <td data-title="Prefix">370</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">LUXEMBOURG</td>
+                      <td data-title="Prefix">352</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MACAU</td>
+                      <td data-title="Prefix">853</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.14</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.215</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MACEDONIA</td>
+                      <td data-title="Prefix">389</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MADAGASCAR</td>
+                      <td data-title="Prefix">261</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MALAWI</td>
+                      <td data-title="Prefix">265</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MALDIVES</td>
+                      <td data-title="Prefix">960</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MALI</td>
+                      <td data-title="Prefix">223</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MALTA</td>
+                      <td data-title="Prefix">356</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MARSHALL ISLANDS</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">692</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MARTINIQUE (French Antilles)</td>
+                      <td data-title="Prefix">596</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MAURITANIA</td>
+                      <td data-title="Prefix">222</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MAURITIUS</td>
+                      <td data-title="Prefix">230</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MAYOTTE</td>
+                      <td data-title="Prefix">262</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MEXICO</td>
+                      <td data-title="Prefix">52</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MICRONESIA</td>
+                      <td data-title="Prefix">691</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MOLDOVA</td>
+                      <td data-title="Prefix">373</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MONACO</td>
+                      <td data-title="Prefix">377</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MONGOLIA</td>
+                      <td data-title="Prefix">976</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MONTSERRAT</td>
+                      <td data-title="Prefix">1664</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MOROCCO</td>
+                      <td data-title="Prefix">212</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MOZAMBIQUE</td>
+                      <td data-title="Prefix">258</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">MYANMAR</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">95</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.78</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.78</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NAMIBIA</td>
+                      <td data-title="Prefix">264</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NAURU</td>
+                      <td data-title="Prefix">674</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">2.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">2.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NEPAL</td>
+                      <td data-title="Prefix">977</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.43</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.43</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NETHERLANDS</td>
+                      <td data-title="Prefix">31</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NETHERLANDS ANTILLES</td>
+                      <td data-title="Prefix">599</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NEW CALEDONIA</td>
+                      <td data-title="Prefix">687</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NEW ZEALAND</td>
+                      <td data-title="Prefix">64</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.465</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NICARAGUA</td>
+                      <td data-title="Prefix">505</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NIGER</td>
+                      <td data-title="Prefix">227</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NIGERIA</td>
+                      <td data-title="Prefix">234</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.64</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NIUE ISLAND</td>
+                      <td data-title="Prefix">683</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NORFOLK ISLAND</td>
+                      <td data-title="Prefix">6723</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">NORWAY</td>
+                      <td data-title="Prefix">47</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.465</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">OMAN</td>
+                      <td data-title="Prefix">968</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PAKISTAN</td>
+                      <td data-title="Prefix">92</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.43</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.43</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PALAU</td>
+                      <td data-title="Prefix">680</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PALESTINE</td>
+                      <td data-title="Prefix">970</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PANAMA</td>
+                      <td data-title="Prefix">507</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PAPUA NEW GUINEA</td>
+                      <td data-title="Prefix">675</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PARAGUAY</td>
+                      <td data-title="Prefix">595</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PERU</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">51</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PHILIPPINES</td>
+                      <td data-title="Prefix">63</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.36</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.36</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">POLAND</td>
+                      <td data-title="Prefix">48</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PORTUGAL</td>
+                      <td data-title="Prefix">351</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">PUERTO RICO</td>
+                      <td data-title="Prefix">1787,<br/> 1939</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">QATAR</td>
+                      <td data-title="Prefix">974</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">REUNION ISLAND</td>
+                      <td data-title="Prefix">262</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ROMANIA</td>
+                      <td data-title="Prefix">40</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">RUSSIA</td>
+                      <td data-title="Prefix">7</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">RWANDA</td>
+                      <td data-title="Prefix">250</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SAIPAN</td>
+                      <td data-title="Prefix">1670</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SAMOA (US)</td>
+                      <td data-title="Prefix">1684</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SAMOA (WESTERN)</td>
+                      <td data-title="Prefix">685</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SAN MARINO</td>
+                      <td data-title="Prefix">378</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SAO TOME & PRINCIPE</td>
+                      <td data-title="Prefix">239</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">2.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">2.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SAUDI ARABIA</td>
+                      <td data-title="Prefix">966</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.42</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.42</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SENEGAL</td>
+                      <td data-title="Prefix">221</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SEYCHELLES</td>
+                      <td data-title="Prefix">248</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SIERRA LEONE</td>
+                      <td data-title="Prefix">232</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SINGAPORE</td>
+                      <td data-title="Prefix">65</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.09</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.09</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SLOVAK REPUBLIC</td>
+                      <td data-title="Prefix">421</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SLOVENIA</td>
+                      <td data-title="Prefix">386</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SOLOMON ISLAND</td>
+                      <td data-title="Prefix">677</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">2.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">2.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SOMALIA</td>
+                      <td data-title="Prefix">252</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SOUTH AFRICA</td>
+                      <td data-title="Prefix">27</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SPAIN</td>
+                      <td data-title="Prefix">34</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.465</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SRI LANKA</td>
+                      <td data-title="Prefix">94</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.52</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.52</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">St. Helena</td>
+                      <td data-title="Prefix">290</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">2.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">2.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ST. KITTS</td>
+                      <td data-title="Prefix">1869</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ST. LUCIA</td>
+                      <td data-title="Prefix">1758</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ST. PIERRE & MIQUELON</td>
+                      <td data-title="Prefix">508</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ST. VINCENT and the Grenadines</td>
+                      <td data-title="Prefix">1784</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SUDAN</td>
+                      <td data-title="Prefix">249</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.64</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.64</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SURINAME</td>
+                      <td data-title="Prefix">597</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SWAZILAND</td>
+                      <td data-title="Prefix">268</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SWEDEN</td>
+                      <td data-title="Prefix">46</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SWITZERLAND</td>
+                      <td data-title="Prefix">41</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.12</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">SYRIA</td>
+                      <td data-title="Prefix">963</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TAIWAN</td>
+                      <td data-title="Prefix">886</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.25</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TAJIKISTAN</td>
+                      <td data-title="Prefix">992</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TANZANIA</td>
+                      <td data-title="Prefix">255</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">THAILAND</td>
+                      <td data-title="Prefix">66</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.1</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TOGO</td>
+                      <td data-title="Prefix">228</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TOKELAU ISLAND</td>
+                      <td data-title="Prefix">690</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TONGA</td>
+                      <td data-title="Prefix">676</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TRINIDAD & TOBAGO</td>
+                      <td data-title="Prefix">1868</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TUNISIA</td>
+                      <td data-title="Prefix">216</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TURKEY</td>
+                      <td data-title="Prefix">90</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TURKMENISTAN</td>
+                      <td data-title="Prefix">993</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TURKS & CAICOS ISLAND</td>
+                      <td data-title="Prefix">1649</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">TUVALU</td>
+                      <td data-title="Prefix">688</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">UGANDA</td>
+                      <td data-title="Prefix">256</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">UKRAINE</td>
+                      <td data-title="Prefix">380</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">UNITED ARAB EMIRATES</td>
+                      <td data-title="Prefix">971</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">UNITED KINGDOM</td>
+                      <td data-title="Prefix">44</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.55</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">UNITED KINGDOM (Premium Services)</td>
+                      <td data-title="Prefix">4470,<br/>4476,<br/>448,<br/>449</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.34</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.34</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">UNITED STATES OF AMERICA</td>
+                      <td data-title="Prefix">1</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.1</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.1</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">URUGUAY</td>
+                      <td data-title="Prefix">598</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">UZBEKISTAN</td>
+                      <td data-title="Prefix">998</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">VANUATU</td>
+                      <td data-title="Prefix">678</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">VENEZUELA</td>
+                      <td data-title="Prefix">58</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">VIETNAM</td>
+                      <td data-title="Prefix">84</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.2</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.2</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">VIRGIN ISLAND (USA)</td>
+                      <td data-title="Prefix">1340</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.49</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.49</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">VIRGIN ISLAND incl Tortola (UK)</td>
+                      <td data-title="Prefix">1284</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">0.79</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">0.79</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">Wallis and Futuna Islands</td>
+                      <td data-title="Prefix">681</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.99</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.99</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">YEMEN</td>
+                      <td data-title="Prefix">967</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">YUGOSLAVIA</td>
+                      <td data-title="Prefix">381</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ZAIRE</td>
+                      <td data-title="Prefix">243</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ZAMBIA</td>
+                      <td data-title="Prefix">260</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                    <tr>
+                      <td data-title="Country">ZIMBABWE</td>
+                      <td data-title="Prefix">263</td>
+                      <td data-title="Fixed (RM/30sec)" class="numeric">1.19</td>
+                      <td data-title="Mobile (RM/30sec)" class="numeric">1.19</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- injector:js -->
+    <script src="src/angular-find-text.js"></script>
+    <script src="src/templates.js"></script>
+    <!-- endinjector -->
+    <!-- ONLY FOR DEVELOP -->
+    <script src="//localhost:35729/livereload.js"></script>
+
+    <script>
+      (function(){
+  
+        angular
+        .module('exampleApp', ['gp.findText']);
+
+        angular
+         .module('exampleApp')
+         .controller('ExampleController', Controller);
+        
+        function Controller(){
+          var vm = this;
+        }
+        
+      })();
+
+    </script>
+
+  </body>
+</html>
