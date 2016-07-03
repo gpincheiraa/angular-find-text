@@ -26,9 +26,10 @@ http://codepen.io/gpincheiraa/pen/xOgJLw
 
   - integrate a jquery for better search value traverse &#10004;
   - testing e2e y unit: unit done &#10004;   e2e &#9747;
-  - coveralls y travis integration: &#10004;;
+  - coveralls y travis integration: &#10004;
   - custom search button icon &#9747;
   - custom css &#10004;
   - jQlite mechanism for search for removing jQuery dependency &#9747;
   - search text insensitive option &#9747;
   - search text multiple navigation to next &#9747;
+  - global options provider &#10004;

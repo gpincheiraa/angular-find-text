@@ -1479,7 +1479,19 @@
       (function(){
   
         angular
-        .module('exampleApp', ['gp.findText']);
+          .module('exampleApp', ['gp.findText']);
+
+
+        angular
+         .module('exampleApp')
+         .config(configFn);
+
+        configFn.$inject = ['FindTextProvider'];
+        
+        function configFn(FindTextProvider){
+          FindTextProvider.submitText('Buscar');
+        }
+
 
         angular
          .module('exampleApp')

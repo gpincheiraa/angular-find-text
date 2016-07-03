@@ -7,9 +7,8 @@
   //- Barra abierta
   form.opened-search(ng-submit="$ctrl.searchText($ctrl.searchedValue)")
     .form-group.col-xs-12.hide-search(ng-click="$ctrl.toggleOpen()")
-      i.fa.fa-reply
-      | Ocultar
+      i.fa.fa-reply(ng-bind="$ctrl.hideText")
     .form-group.col-xs-12
-      input.form-control(placeholder="Código a buscar",ng-model="$ctrl.searchedValue", ng-change="$ctrl.checkEmpty($ctrl.searchedValue)")
+      input.form-control(placeholder="{{$ctrl.searchPlaceholder}}",ng-model="$ctrl.searchedValue", ng-change="$ctrl.checkEmpty($ctrl.searchedValue)")
     .form-group.col-xs-12.submit-search
-      button.btn.btn-success(type='submit', ng-disabled="!$ctrl.searchedValue") Buscar Código 
+      button.btn.btn-success(type='submit', ng-disabled="!$ctrl.searchedValue", ng-bind="$ctrl.submitText")
