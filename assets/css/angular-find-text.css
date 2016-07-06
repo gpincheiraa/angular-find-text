@@ -21,6 +21,7 @@
 .form29-search.closed .opened-search {
   opacity: 0;
   z-index: -1;
+  width: 0;
 }
 .form29-search .opened-search, .form29-search .closed-search {
   position: absolute;
